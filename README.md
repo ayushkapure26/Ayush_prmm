@@ -16,6 +16,18 @@ An Android companion for CNG drivers, built by [Ayush Kapure](https://github.com
 | Guest Mode | Use local records without signing in |
 | CSV import and export | Move your records between files and the app |
 
+## Android + website
+
+[Open mycngmitra](https://mycngmitra.ayushkapure26.chatgpt.site) for regional rates, savings comparisons, cylinder care, and a web refill diary. The website currently requires the owner's ChatGPT sign-in.
+
+Android Settings includes **Open mycngmitra website**. To bring existing Android refills to the website:
+
+1. Android Settings → Data Backup & Export → Export CSV.
+2. Website → Refill history → Import Android CSV.
+3. Select the backup, assign company and location, review, then import.
+
+Transfers are manual and one-way (Android to web), limited to 100 refills per file. Exact repeated imports are skipped. Vehicle identifiers are retained on refill records; cylinder specifications are not inferred from Android tank capacity. Android Room/Firebase accounts and website ChatGPT accounts are still separate. No automatic cross-platform sync or shared authentication is claimed.
+
 ## Try the app
 
 Open [Android builds](https://github.com/ayushkapure26/Ayush_prmm/actions/workflows/android.yml), select a successful run on `main`, and download **CNG-Mitra-debug-apk** from Artifacts. Sign in to GitHub to download, extract the ZIP, and install the APK on an Android device.

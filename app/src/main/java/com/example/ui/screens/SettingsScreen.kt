@@ -170,6 +170,36 @@ fun SettingsScreen(
             Spacer(modifier = Modifier.height(16.dp))
         }
 
+        // Companion website uses its own browser sign-in; never attach app tokens.
+        item {
+            Card(modifier = Modifier.fillMaxWidth()) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Text("CNG मित्र · Android + Web", fontWeight = FontWeight.Bold)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text("Open mycngmitra for regional prices, savings and cylinder care. The website currently requires its owner's ChatGPT sign-in.")
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text("To copy refills: Export CSV below, then open website → Refill history → Import Android CSV. Review the company and location before importing. Automatic sync is not connected.")
+                    Spacer(modifier = Modifier.height(12.dp))
+                    OutlinedButton(
+                        modifier = Modifier.testTag("open_mycngmitra_web"),
+                        onClick = {
+                            try {
+                                context.startActivity(Intent(Intent.ACTION_VIEW,
+                                    Uri.parse("https://mycngmitra.ayushkapure26.chatgpt.site")))
+                            } catch (_: android.content.ActivityNotFoundException) {
+                                Toast.makeText(context, "Install a browser to open mycngmitra.", Toast.LENGTH_LONG).show()
+                            }
+                        }
+                    ) {
+                        Icon(Icons.Default.OpenInNew, contentDescription = null)
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Open mycngmitra website")
+                    }
+                }
+            }
+            Spacer(modifier = Modifier.height(16.dp))
+        }
+
         // Import / Export Backup Card
         item {
             Card(
